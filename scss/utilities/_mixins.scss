@@ -1,0 +1,25 @@
+@mixin flexy($disp:flex, $dir:null, $wrap:null, $just:null, $align:null) {
+    display: $disp;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin mq($break) {
+    $value: map-get($map: $breakpoints, $key: $break);
+    $sm: map-get($map: $breakpoints, $key: 'sm');
+    @if $value==null {
+        @error "`#{$break} ` is not valid breakpoint";
+    }
+    @else if $value<$sm {
+        @media(max-width: $value) {
+            @content;
+        }
+    }
+    @else {
+        @media(min-width: $value) {
+            @content;
+        }
+    }
+}

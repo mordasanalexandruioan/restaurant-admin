@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamamia Restaurant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.0/chart.min.js" integrity="sha512-VMsZqo0ar06BMtg0tPsdgRADvl0kDHpTbugCBBrL55KmucH6hP9zWdLIWY//OTfMnzz6xWQRxQqsUFefwHuHyg==" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <i class="fas fa-bars"></i>
+            <ul class="menu-options">
+                <li><a href="#">See Menu</a></li>
+                <li><a href="">Update Menu</a></li>
+                <li><a href="">See Offerts</a></li>
+                <li><a href="">Update Offerts</a></li>
+                <li><a href="">See Statistics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+
+        <section class="recent-activity">
+            <h2>Recent visitors</h2>
+            <aside class="cards-box">
+                <div class="card">
+                    <img src="/img/keith.jpeg">
+                    <span>Name</span>
+                    <span>email</span>
+                    <span>date</span>
+                </div>
+
+                <div class="card">
+                    <img src="/img/claus990.jpeg">
+                    <span>Name</span>
+                    <span>email</span>
+                    <span>date</span>
+                </div>
+
+                <div class="card">
+                    <img src="/img/johnny.jpeg">
+                    <span>Name</span>
+                    <span>email</span>
+                    <span>date</span>
+                </div>
+
+                <div class="card">
+                    <img src="/img/otilia.jpeg">
+                    <span>Name</span>
+                    <span>email</span>
+                    <span>date</span>
+                </div>
+            </aside>
+
+            <aside class="buttons-box">
+                <button></button>
+                <button></button>
+                <button></button>
+            </aside>
+
+        </section>
+
+        <section class="productively">
+            <h2>Dashboards</h2>
+
+            <aside>
+                <div class="prod-card">
+                    <i class="fas fa-utensils"></i>
+                    <span>780</span>
+                    <span>Orders</span>
+                </div>
+
+                <div class="prod-card">
+                    <i class="fas fa-list-alt"></i>
+                    <span>70</span>
+                    <span>Pending orders</span>
+                </div>
+
+                <div class="prod-card">
+                    <i class="fas fa-window-close"></i>
+                    <span>64</span>
+                    <span>Cancelled orders</span>
+                </div>
+
+                <div class="prod-card">
+                    <i class="fas fa-check-circle"></i>
+                    <span>710</span>
+                    <span>Completed orders</span>
+                </div>
+            </aside>
+
+
+            <section class="canvases">
+
+                <h2>Total Orders Weekly</h2>
+
+                <canvas class="cn-orders">
+    
+                </canvas>
+
+
+                <h2>Favorite Food</h2>
+
+                <canvas class="cn-fav-food">
+
+                </canvas>
+
+            </section>
+
+        </section>
+
+
+    </main>
+
+    <footer></footer>
+
+    <script src="javaScript/data.js"></script>
+    <script src="javaScript/functions.js"></script>
+    <script src="javaScript/main.js"></script>
+</body>
+
+</html>

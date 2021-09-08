@@ -1,0 +1,15 @@
+@import 'utilities/mixins',
+'utilities/variables';
+@import 'base/base',
+'base/reset';
+@import 'layout/header',
+'layout/main',
+'layout/footer';
+@import 'components/recent-activity',
+'components/activity-card',
+'components/menu-options',
+'components/cards-box',
+'components/buttons-box',
+'components/productively',
+'components/prod-card',
+'components/canvases';

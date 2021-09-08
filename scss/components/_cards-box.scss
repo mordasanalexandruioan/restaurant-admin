@@ -1,0 +1,5 @@
+.cards-box {
+    @include flexy($dir: row, $wrap: wrap, $just: space-evenly);
+    max-width: 355px;
+    margin: 0 auto;
+}
