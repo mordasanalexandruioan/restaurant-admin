@@ -1,3 +1,20 @@
+//menu
+
+let eventMenu = e => {
+    let obj = e.target;
+    let nav = obj.parentNode;
+
+    if (obj.className == "fas fa-bars closed") {
+        obj.classList.remove("closed");
+        obj.classList.add("opened");
+        nav.children[1].classList.add("opened");
+    } else if (obj.className == "fas fa-bars opened") {
+        obj.classList.remove("opened");
+        obj.classList.add("closed");
+        nav.children[1].classList.remove("opened");
+    }
+}
+
 //canvas
 
 let totalOrders = document.getElementsByClassName('cn-orders')[0];

@@ -1,0 +1,9 @@
+.message-to-user {
+    & h2 {
+        text-decoration: underline rgb(247, 203, 5);
+    }
+    & h3 {
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+}

@@ -1,7 +1,7 @@
 .prod-card {
     padding: .6em .9em;
     border-radius: .2em;
-    background-image: radial-gradient(circle at center right, rgb(187, 174, 0), rgb(1, 0, 8));
+    background-image: radial-gradient(circle at center right, rgb(253, 215, 0), rgb(1, 0, 8));
     color: #fff;
     min-height: 50px;
     @include flexy($dir: row, $align: center);

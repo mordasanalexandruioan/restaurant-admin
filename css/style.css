@@ -9,6 +9,9 @@ body {
   padding: 0;
   font-family: "Mulish", sans-serif;
 }
+body section {
+  padding: 1.5em 0.4em;
+}
 body section h2 {
   margin-top: 0;
   font-weight: 300;
@@ -363,7 +366,7 @@ header {
   padding: 1.5em 0.4em;
 }
 
-.card {
+.card, .card-select {
   padding: 0.7em;
   display: flex;
   flex-direction: column;
@@ -378,21 +381,28 @@ header {
   margin: 0.4em 0.1em 0.8em;
   font-size: 0.92rem;
 }
-.card img {
+.card img, .card-select img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
 }
 
 .menu-options {
-  display: none;
-  padding: 0.3em 0 0.3em 0.7em;
+  display: flex;
+  padding: 5em 0 0.3em 0.7em;
   list-style: none;
   position: absolute;
   width: 100%;
   height: 100vh;
   top: 11px;
   left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: transform 0.5s;
+  transform: translateX(-100%);
   background-image: radial-gradient(circle at 10% 8%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 87% 45%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 9% 67%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 31% 83%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 46% 54%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 16% 24%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 18% 9%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 85% 69%, rgba(255, 221, 0, 0.04) 0%, rgba(255, 221, 0, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 55% 7%, rgba(255, 221, 0, 0.04) 0%, rgba(255, 221, 0, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 69% 69%, rgba(255, 221, 0, 0.04) 0%, rgba(255, 221, 0, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 68% 60%, rgba(255, 221, 0, 0.04) 0%, rgba(255, 221, 0, 0.04) 4%, transparent 4%, transparent 96%), linear-gradient(135deg, #353535, #1b1b1b);
 }
 .menu-options li {
@@ -404,13 +414,18 @@ header {
   font-weight: 400;
 }
 
-.cards-box {
+.menu-options.opened {
+  transform: translateX(0%);
+}
+
+.cards-box, .users-box {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   max-width: 355px;
   margin: 0 auto;
+  padding: 1em 0;
 }
 
 .buttons-box {
@@ -437,7 +452,7 @@ header {
   padding: 1.5em 0.4em;
 }
 .productively h2 {
-  color: #d4d400;
+  color: #ffd000;
   text-align: right;
   border-bottom: solid 1px white;
   margin-top: 2em;
@@ -449,7 +464,7 @@ header {
 .prod-card {
   padding: 0.6em 0.9em;
   border-radius: 0.2em;
-  background-image: radial-gradient(circle at center right, #bbae00, #010008);
+  background-image: radial-gradient(circle at center right, #fdd700, #010008);
   color: #fff;
   min-height: 50px;
   display: flex;
@@ -477,6 +492,81 @@ header {
 
 .canvases {
   padding: 0 0.4em;
+}
+
+.card-select {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border: solid 1px #222;
+  height: 90px;
+  width: 230px;
+  max-width: 300px;
+}
+.card-select span {
+  color: black;
+  font-weight: 700;
+}
+.card-select img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.card-select input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: solid 1px gray;
+  margin-left: 0.2em;
+  padding-top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.card-select input[type=checkbox]:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00c";
+  font-size: 0.45rem;
+  display: none;
+  color: white;
+}
+.card-select input[type=checkbox]:checked {
+  background-color: #00a700;
+}
+.card-select input[type=checkbox]:checked:before {
+  display: block;
+}
+
+.users-box {
+  max-width: 500px;
+}
+
+.message-to-user h2 {
+  text-decoration: underline #f7cb05;
+}
+.message-to-user h3 {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.message textarea {
+  width: 100%;
+  min-height: 130px;
+  margin-bottom: 1em;
+  padding: 0.3em;
+}
+.message button {
+  text-transform: uppercase;
+  width: 100%;
+  padding: 0.6em 0;
+  font-weight: 900;
+  background-image: radial-gradient(circle at 45% 67%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 16% 36%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 69% 64%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 88% 23%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 43% 26%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 66% 45%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 71% 41%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 89% 76%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 70% 62%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 88% 20%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 57% 91%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 98% 4%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 28% 61%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 48% 96%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 13% 61%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 44% 44%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 20% 19%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 5%, transparent 5%, transparent 100%), linear-gradient(135deg, #ff6f00, #f7cb05);
+  border: solid 1px black;
+  border-radius: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */
