@@ -1,6 +1,7 @@
 .message {
     & textarea {
         width: 100%;
+        max-width: 500px;
         min-height: 130px;
         margin-bottom: 1em;
         padding: .3em;
@@ -8,10 +9,14 @@
     & button {
         text-transform: uppercase;
         width: 100%;
+        max-width: 500px;
         padding: .6em 0;
         font-weight: 900;
         background-image: radial-gradient(circle at 45% 67%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 16% 36%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 69% 64%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 88% 23%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 43% 26%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 66% 45%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 71% 41%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 89% 76%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 70% 62%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 88% 20%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 57% 91%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 98% 4%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 28% 61%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 48% 96%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 13% 61%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 44% 44%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 20% 19%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 5%, transparent 5%, transparent 100%), linear-gradient(135deg, rgb(255, 111, 0), rgb(247, 203, 5));
         border: solid 1px black;
         border-radius: 1em;
+        @include mq('med') {
+            max-width: 200px;
+        }
     }
 }

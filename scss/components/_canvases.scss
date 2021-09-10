@@ -1,3 +1,9 @@
 .canvases {
     padding: 0 .4em;
+    @include mq('med') {
+        @include flexy($dir: row, $just: space-evenly);
+    }
+    & .weekly canvas {
+        margin-top: 3em;
+    }
 }

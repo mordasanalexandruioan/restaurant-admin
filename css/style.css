@@ -373,8 +373,8 @@ header {
   justify-content: space-evenly;
   align-items: center;
   box-shadow: 1px 1px 4px #5f5f5f;
-  width: 150px;
-  height: 180px;
+  width: 210px;
+  height: 240px;
   border-radius: 0.3em;
   background-color: #181818;
   color: yellow;
@@ -394,9 +394,9 @@ header {
   position: absolute;
   width: 100%;
   height: 100vh;
-  top: 11px;
+  top: 12px;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -404,6 +404,14 @@ header {
   transition: transform 0.5s;
   transform: translateX(-100%);
   background-image: radial-gradient(circle at 10% 8%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 87% 45%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 8%, transparent 8%, transparent 92%), radial-gradient(circle at 9% 67%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 31% 83%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 46% 54%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 16% 24%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 18% 9%, rgba(255, 255, 0, 0.03) 0%, rgba(255, 255, 0, 0.03) 6%, transparent 6%, transparent 94%), radial-gradient(circle at 85% 69%, rgba(255, 221, 0, 0.04) 0%, rgba(255, 221, 0, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 55% 7%, rgba(255, 221, 0, 0.04) 0%, rgba(255, 221, 0, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 69% 69%, rgba(255, 221, 0, 0.04) 0%, rgba(255, 221, 0, 0.04) 4%, transparent 4%, transparent 96%), radial-gradient(circle at 68% 60%, rgba(255, 221, 0, 0.04) 0%, rgba(255, 221, 0, 0.04) 4%, transparent 4%, transparent 96%), linear-gradient(135deg, #353535, #1b1b1b);
+}
+@media (min-width: 500px) {
+  .menu-options {
+    width: 50%;
+    align-items: flex-start;
+    font-size: 1.2rem;
+    top: 10px;
+  }
 }
 .menu-options li {
   line-height: 2;
@@ -423,7 +431,7 @@ header {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  max-width: 355px;
+  max-width: 466px;
   margin: 0 auto;
   padding: 1em 0;
 }
@@ -439,11 +447,13 @@ header {
   width: 10px;
   height: 10px;
   padding: 0;
-  margin: 0.3em;
+  margin: 3px;
   border-radius: 50%;
   border: solid 1px black;
   background-color: yellow;
   box-shadow: 1px 1px 3px #5f5f5f;
+  font-size: 0.1rem;
+  color: transparent;
 }
 
 .productively {
@@ -458,7 +468,14 @@ header {
   margin-top: 2em;
 }
 .productively canvas {
-  margin-bottom: 2em;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 2em;
+}
+@media (min-width: 720px) {
+  .productively canvas {
+    max-width: 320px;
+  }
 }
 
 .prod-card {
@@ -467,11 +484,12 @@ header {
   background-image: radial-gradient(circle at center right, #fdd700, #010008);
   color: #fff;
   min-height: 50px;
+  max-width: 420px;
   display: flex;
   flex-direction: row;
   align-items: center;
   position: relative;
-  margin-bottom: 1em;
+  margin: 0 auto 1em;
 }
 .prod-card i {
   position: absolute;
@@ -492,6 +510,16 @@ header {
 
 .canvases {
   padding: 0 0.4em;
+}
+@media (min-width: 720px) {
+  .canvases {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+.canvases .weekly canvas {
+  margin-top: 3em;
 }
 
 .card-select {
@@ -555,6 +583,7 @@ header {
 
 .message textarea {
   width: 100%;
+  max-width: 500px;
   min-height: 130px;
   margin-bottom: 1em;
   padding: 0.3em;
@@ -562,11 +591,17 @@ header {
 .message button {
   text-transform: uppercase;
   width: 100%;
+  max-width: 500px;
   padding: 0.6em 0;
   font-weight: 900;
   background-image: radial-gradient(circle at 45% 67%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 16% 36%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 3%, transparent 3%, transparent 100%), radial-gradient(circle at 69% 64%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 88% 23%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 43% 26%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 66% 45%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 71% 41%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 89% 76%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 70% 62%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 88% 20%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 7%, transparent 7%, transparent 100%), radial-gradient(circle at 57% 91%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 98% 4%, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 28% 61%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 48% 96%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 13% 61%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 44% 44%, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.03) 5%, transparent 5%, transparent 100%), radial-gradient(circle at 20% 19%, rgba(16, 15, 15, 0.02) 0%, rgba(16, 15, 15, 0.02) 5%, transparent 5%, transparent 100%), linear-gradient(135deg, #ff6f00, #f7cb05);
   border: solid 1px black;
   border-radius: 1em;
+}
+@media (min-width: 720px) {
+  .message button {
+    max-width: 200px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

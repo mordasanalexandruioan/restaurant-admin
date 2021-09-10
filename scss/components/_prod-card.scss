@@ -4,9 +4,10 @@
     background-image: radial-gradient(circle at center right, rgb(253, 215, 0), rgb(1, 0, 8));
     color: #fff;
     min-height: 50px;
+    max-width: 420px;
     @include flexy($dir: row, $align: center);
     position: relative;
-    margin-bottom: 1em;
+    margin: 0 auto 1em;
     & i {
         position: absolute;
         font-size: 1.9rem;

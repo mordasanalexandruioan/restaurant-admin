@@ -113,3 +113,232 @@ let favoriteFoodChart = new Chart(favoriteFood, {
     data: favoriteFoodData,
     options: favoriteFoodOptions
 })
+
+//creating - cards
+
+function portionatedData(data, displayNumber, perPage) {
+
+    let persons = [];
+    let numberOfPages = Math.round(data.length / perPage);
+
+    if (numberOfPages >= displayNumber) {
+
+        let start = perPage * (displayNumber - 1);
+        let end = perPage * displayNumber;
+
+        for (let i = start; i < end; i++) {
+
+            persons.push(data[i]);
+        }
+    }
+    return persons;
+}
+
+function displayCards(data, displayNumber, perPage) {
+    portionatedVector = portionatedData(data, displayNumber, perPage);
+
+    let cards = document.getElementsByClassName('cards-box')[0];
+
+    cards.innerHTML = "";
+    for (let i = 0; i < portionatedVector.length; i++) {
+
+        cards.append(createCardFor(portionatedVector[i]));
+
+    }
+}
+
+function createCardFor(element) {
+
+    let card = document.createElement('div');
+    card.className = "card";
+
+    let avatar = document.createElement('img');
+    avatar.src = element.avatar;
+    card.append(avatar);
+
+    let name = document.createElement('span');
+    name.textContent += element.username;
+    card.append(name);
+
+    let email = document.createElement('span');
+    email.textContent = element.email;
+    card.append(email);
+
+    let loginData = document.createElement('span');
+    loginData.textContent = element.visit;
+    card.append(loginData);
+
+    return card;
+}
+
+function removeObj(section) {
+
+    while (section.firstChild) {
+        section.removeChild(section.firstChild);
+    }
+
+}
+
+function createCardForMessages(element) {
+    let card = document.createElement('div');
+    card.className = "card-select";
+
+    let avatar = document.createElement('img');
+    avatar.src = element.avatar;
+    card.append(avatar);
+
+    let name = document.createElement('span');
+    name.textContent += element.username;
+    card.append(name);
+
+    let check = document.createElement('input');
+    check.type = "checkbox";
+    card.append(check);
+
+    return card;
+}
+
+function displayCardsForMessages() {
+    let usersBox = document.getElementsByClassName('users-box')[0];
+    for (let i = 0; i < data.length; i++) {
+        usersBox.append(createCardForMessages(data[i]));
+    }
+}
+
+//creating buttons - recent visits
+
+function createButtons(data, perPage) {
+
+    let counter = data.length / perPage;
+    let buttons = document.getElementsByClassName('buttons-box')[0];
+
+    for (let i = 1; i <= counter; i++) {
+        let but = document.createElement('button');
+        but.textContent = i;
+        buttons.append(but);
+    }
+}
+
+//default page view cards and buttons
+
+function defaultView() {
+    if (window.innerWidth > 320 && window.innerWidth < 555) {
+        createButtons(data, 2);
+        displayCards(data, 1, 2);
+    } else if (window.innerWidth > 555 && window.innerWidth < 1024) {
+        displayCards(data, 1, 4);
+        createButtons(data, 4);
+    } else if (window.innerWidth > 1024) {
+        displayCards(data, 1, 6);
+        createButtons(data, 6);
+    }
+}
+
+//enents - buttons
+
+let eventButtonsCounterMobile = e => {
+    let obj = e.target;
+    let box = obj.parentNode;
+    let section = box.parentNode;
+
+    if (obj.tagName == "BUTTON") {
+        if (window.innerWidth > 320 && window.innerWidth < 555) {
+
+            if (obj.textContent == "1") {
+                removeObj(section.children[1]);
+                displayCards(data, 1, 2);
+
+            } else if (obj.textContent == "2") {
+                removeObj(section.children[1]);
+                displayCards(data, 2, 2);
+
+            } else if (obj.textContent == "3") {
+                removeObj(section.children[1]);
+                displayCards(data, 3, 2);
+
+            } else if (obj.textContent == "4") {
+                removeObj(section.children[1]);
+                displayCards(data, 4, 2);
+
+            } else if (obj.textContent == "5") {
+                removeObj(section.children[1]);
+                displayCards(data, 5, 2);
+
+            } else if (obj.textContent == "6") {
+                removeObj(section.children[1]);
+                displayCards(data, 6, 2);
+            }
+        }
+    }
+
+}
+
+let eventButtonsCounterTablet = e => {
+    let obj = e.target;
+    let box = obj.parentNode;
+    let section = box.parentNode;
+
+    if (obj.tagName == "BUTTON") {
+        if (window.innerWidth > 555 && window.innerWidth < 1024) {
+
+            if (obj.textContent == "1") {
+                removeObj(section.children[1]);
+                displayCards(data, 1, 4);
+
+            } else if (obj.textContent == "2") {
+                removeObj(section.children[1]);
+                displayCards(data, 2, 4);
+
+            } else if (obj.textContent = "2") {
+                removeObj(section.children[1]);
+                displayCards(data, 3, 4);
+            }
+        }
+    }
+
+}
+
+let eventButtonsCounterDesktop = e => {
+    let obj = e.target;
+    let box = obj.parentNode;
+    let section = box.parentNode
+
+    if (obj.tagName == "BUTTON") {
+        if (window.innerWidth > 1024) {
+
+            if (obj.textContent == "1") {
+                removeObj(section.children[1]);
+                displayCards(data, 1, 6);
+
+            } else if (obj.textContent == "2") {
+                removeObj(section.children[1]);
+                displayCards(data, 2, 6);
+
+            }
+        }
+    }
+
+}
+
+//events - window
+
+let eventWindowResize = e => {
+    let buttonsBox = document.getElementsByClassName('buttons-box')[0];
+    let cardsBox = document.getElementsByClassName('cards-box')[0]
+    if (window.innerWidth > 320 && window.innerWidth < 555) {
+        removeObj(buttonsBox);
+        createButtons(data, 2);
+        removeObj(cardsBox);
+        displayCards(data, 1, 2);
+    } else if (window.innerWidth > 555 && window.innerWidth < 1024) {
+        removeObj(buttonsBox);
+        createButtons(data, 4);
+        removeObj(cardsBox);
+        displayCards(data, 1, 4);
+    } else if (window.innerWidth > 1024) {
+        removeObj(buttonsBox);
+        createButtons(data, 6);
+        removeObj(cardsBox);
+        displayCards(data, 1, 6);
+    }
+}
