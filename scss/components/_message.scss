@@ -1,4 +1,5 @@
 .message {
+    @include flexy($dir: column);
     & textarea {
         width: 100%;
         max-width: 500px;

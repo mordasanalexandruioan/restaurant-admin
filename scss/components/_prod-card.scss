@@ -6,6 +6,10 @@
     min-height: 50px;
     max-width: 420px;
     @include flexy($dir: row, $align: center);
+    @include mq('lg') {
+        width: 100%;
+        max-width: none;
+    }
     position: relative;
     margin: 0 auto 1em;
     & i {

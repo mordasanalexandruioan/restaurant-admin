@@ -4,6 +4,8 @@ menu.addEventListener('click', eventMenu);
 let cardsBox = document.getElementsByClassName('cards-box')[0];
 defaultView();
 
+
+
 displayCardsForMessages();
 
 let buttonsBox = document.getElementsByClassName('buttons-box')[0];

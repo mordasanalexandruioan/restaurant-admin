@@ -3,6 +3,14 @@
     @include mq('med') {
         @include flexy($dir: row, $just: space-evenly);
     }
+    @include mq('lg') {
+        @include flexy($dir: column);
+        position: absolute;
+        right: 1%;
+        top: 60px;
+        width: 50%;
+        max-width: 700px;
+    }
     & .weekly canvas {
         margin-top: 3em;
     }

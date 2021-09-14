@@ -195,6 +195,17 @@ function createCardForMessages(element) {
     check.type = "checkbox";
     card.append(check);
 
+    let selectionsIMG = document.getElementsByClassName('selections-img')[0];
+
+    card.addEventListener('click', (e) => {
+        if (check.checked == true) {
+            selectionsIMG.append(createImgFromSelecting(element.avatar))
+        } else {
+            element.style.display = "none";
+        }
+    })
+
+
     return card;
 }
 
@@ -203,6 +214,14 @@ function displayCardsForMessages() {
     for (let i = 0; i < data.length; i++) {
         usersBox.append(createCardForMessages(data[i]));
     }
+}
+
+function createImgFromSelecting(obj) {
+
+    let img = document.createElement('img');
+    img.src = obj;
+
+    return img;
 }
 
 //creating buttons - recent visits
@@ -289,7 +308,7 @@ let eventButtonsCounterTablet = e => {
                 removeObj(section.children[1]);
                 displayCards(data, 2, 4);
 
-            } else if (obj.textContent = "2") {
+            } else if (obj.textContent = "3") {
                 removeObj(section.children[1]);
                 displayCards(data, 3, 4);
             }
@@ -319,6 +338,7 @@ let eventButtonsCounterDesktop = e => {
     }
 
 }
+
 
 //events - window
 
